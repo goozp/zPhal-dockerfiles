@@ -22,8 +22,7 @@ RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-di
         && docker-php-ext-install gd \
         && docker-php-ext-install mbstring \
         && docker-php-ext-install mcrypt \
-        && docker-php-ext-install pdo_mysql \
-        && docker-php-ext-install openssl
+        && docker-php-ext-install pdo_mysql
 RUN pecl install /home/memcached.tgz && echo "extension=memcached.so" > /usr/local/etc/php/conf.d/memcached.ini \
         && pecl install /home/redis.tgz && echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini \
 RUN cd /home \
