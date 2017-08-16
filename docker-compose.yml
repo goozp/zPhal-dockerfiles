@@ -1,5 +1,4 @@
 nginx:
-    service: zPhal-nginx
     build: ./nginx
     ports:
       - "80:80"
@@ -9,7 +8,6 @@ nginx:
       - ~/data:/opt
 
 php:
-    service: zPhal-php
     build: ./php
     ports:
       - "9000:9000"
@@ -21,7 +19,6 @@ php:
       - ~/data:/opt
 
 mysql:
-    service: zPhal-mysql
     build: ./mysql
     ports:
       - "3306:3306"
@@ -31,13 +28,11 @@ mysql:
       MYSQL_ROOT_PASSWORD: 123456
 
 memcache:
-    service: zPhal-memcache
     build: ./memcache
     ports:
       - "11211:11211"
 
 redis:
-    service: zPhal-redis
     build: ./redis
     ports:
       - "6379:6379"
