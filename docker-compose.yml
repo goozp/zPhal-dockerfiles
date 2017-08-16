@@ -1,0 +1,38 @@
+nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    links:
+      - "php"
+    volumes:
+      - ~/data:/opt
+
+php:
+    build: ./php
+    ports:
+      - "9000:9000"
+    links:
+      - "mysql"
+      - "memcache"
+      - "redis"
+    volumes:
+      - ~/data:/opt
+
+mysql:
+    build: ./mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - ~/data/data/mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+
+memcache:
+    build: ./memcache
+    ports:
+      - "11211:11211"
+
+redis:
+    build: ./redis
+    ports:
+      - "6379:6379"

@@ -1,0 +1,3 @@
+FROM memcached:1.5
+
+EXPOSE 11211
