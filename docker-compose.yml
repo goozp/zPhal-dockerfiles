@@ -5,7 +5,7 @@ nginx:
     links:
       - "php"
     volumes:
-      - /data:/opt
+      - /data:/data
 
 php:
     build: ./php
@@ -16,7 +16,7 @@ php:
       - "memcache"
       - "redis"
     volumes:
-      - /data:/opt
+      - /data:/data
 
 mysql:
     build: ./mysql
