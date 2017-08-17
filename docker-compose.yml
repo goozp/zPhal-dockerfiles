@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   php:
     build: ./php
@@ -7,11 +7,11 @@ services:
     ports:
       - "9000:9000"
     links:
-      - "mysql"
-      - "memcache"
-      - "redis"
+      - mysql
+      - memcache
+      - redis
     volumes:
-      - "/data/www:/data"
+      - /data/www:/data
     restart: always
 
   nginx:
@@ -22,7 +22,7 @@ services:
     build: ./nginx
     image: zphal_nginx
     volumes:
-      - "/data/www:/data"
+      - /data/www:/data
     ports:
       - "80:80"
     restart: always
@@ -33,7 +33,7 @@ services:
       ports:
         - "3306:3306"
       volumes:
-        - "/data/data/mysql:/var/lib/mysql"
+        - /data/data/mysql:/var/lib/mysql
       environment:
         MYSQL_ROOT_PASSWORD: 123456
       restart: always
