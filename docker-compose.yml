@@ -1,9 +1,7 @@
-version: '3'
+version: '2'
 services:
   php:
     build: ./php
-    image: zphal_php
-    container_name: zphalphp7
     ports:
       - "9000:9000"
     links:
@@ -11,25 +9,23 @@ services:
       - memcache
       - redis
     volumes:
-      - /data/www:/data
+      - /data:/data
     restart: always
 
   nginx:
     depends_on:
       - php
     links:
-      - php
+      - php:php7
     build: ./nginx
-    image: zphal_nginx
     volumes:
-      - /data/www:/data
+      - /data:/data
     ports:
       - "80:80"
     restart: always
 
   mysql:
       build: ./mysql
-      image: zphal_mysql
       ports:
         - "3306:3306"
       volumes:
@@ -40,14 +36,12 @@ services:
 
   memcache:
       build: ./memcache
-      image: zphal_memcache
       ports:
         - "11211:11211"
       restart: always
 
   redis:
       build: ./redis
-      image: zphal_redis
       ports:
         - "6379:6379"
       restart: always

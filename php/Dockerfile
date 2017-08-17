@@ -1,4 +1,5 @@
 FROM php:7.1-fpm
+MAINTAINER goozp "gzp@goozp.com"
 
 # Install env
 ADD sources.list    /etc/apt/sources.list
