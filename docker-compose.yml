@@ -5,7 +5,7 @@ nginx:
     links:
       - "php"
     volumes:
-      - ~/opt:/opt
+      - /data:/opt
 
 php:
     build: ./php
@@ -16,14 +16,14 @@ php:
       - "memcache"
       - "redis"
     volumes:
-      - ~/opt:/opt
+      - /data:/opt
 
 mysql:
     build: ./mysql
     ports:
       - "3306:3306"
     volumes:
-      - ~/opt/data/mysql:/var/lib/mysql
+      - /data/data/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: 123456
 

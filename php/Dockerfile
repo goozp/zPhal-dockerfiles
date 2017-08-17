@@ -40,10 +40,10 @@ ADD php-fpm.conf    /usr/local/etc/php-fpm.conf
 ADD composer.phar /usr/local/bin/composer
 RUN chmod 755 /usr/local/bin/composer
 
-WORKDIR /opt
+WORKDIR /data
 
 # Write Permission
 RUN usermod -u 1000 www-data
 
 EXPOSE 9000
-VOLUME ["/opt"]
+VOLUME ["/data"]
