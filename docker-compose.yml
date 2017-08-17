@@ -1,14 +1,9 @@
-nginx:
-    build: ./nginx
-    ports:
-      - "80:80"
-    links:
-      - "php"
-    volumes:
-      - /data:/data
-
-php:
+version: '2'
+services:
+  php:
     build: ./php
+    image: zphal_php
+    container_name: zphalphp7
     ports:
       - "9000:9000"
     links:
@@ -16,23 +11,45 @@ php:
       - "memcache"
       - "redis"
     volumes:
-      - /data:/data
+      - "/data/www:/data"
+    restart: always
 
-mysql:
-    build: ./mysql
-    ports:
-      - "3306:3306"
+  nginx:
+    depends_on:
+      - php
+    links:
+      - php
+    build: ./nginx
+    image: zphal_nginx
     volumes:
-      - /data/data/mysql:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: 123456
-
-memcache:
-    build: ./memcache
+      - "/data/www:/data"
     ports:
-      - "11211:11211"
+      - "80:80"
+    restart: always
 
-redis:
-    build: ./redis
-    ports:
-      - "6379:6379"
+  mysql:
+      build: ./mysql
+      image: zphal_mysql
+      ports:
+        - "3306:3306"
+      volumes:
+        - "/data/data/mysql:/var/lib/mysql"
+      environment:
+        MYSQL_ROOT_PASSWORD: 123456
+      restart: always
+
+  memcache:
+      build: ./memcache
+      image: zphal_memcache
+      ports:
+        - "11211:11211"
+      restart: always
+
+  redis:
+      build: ./redis
+      image: zphal_redis
+      ports:
+        - "6379:6379"
+      restart: always
+
+
