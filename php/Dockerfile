@@ -32,15 +32,6 @@ RUN cd /home \
     && cd phalcon/build \
     && ./install \
     && echo "extension=phalcon.so" > /usr/local/etc/php/conf.d/phalcon.ini
-RUN cd /home \
-	&& tar -zxvf swoole.tar.gz \
-	&& mv swoole-* swoole \
-	&& cd swoole \
-	&& phpize \
-	&& ./configure \
-	&& make \
-	&& make install \
-	&& echo "extension=swoole.so" > /usr/local/etc/php/conf.d/swoole.ini
 
 # PHP config
 ADD php.ini    /usr/local/etc/php/php.ini
