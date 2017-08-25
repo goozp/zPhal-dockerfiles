@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
 COPY memcached.tgz /home/memcached.tgz
 COPY redis.tgz /home/redis.tgz
 COPY cphalcon.tar.gz /home/cphalcon.tar.gz
+COPY swoole.tar.gz /home/swoole.tar.gz
 
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
         && docker-php-ext-install zip \
@@ -31,7 +32,15 @@ RUN cd /home \
     && cd phalcon/build \
     && ./install \
     && echo "extension=phalcon.so" > /usr/local/etc/php/conf.d/phalcon.ini
-
+RUN cd /home \
+	&& tar -zxvf swoole.tar.gz \
+	&& mv swoole-* swoole \
+	&& cd swoole \
+	&& phpize \
+	&& ./configure \
+	&& make \
+	&& make install \
+	&& echo "extension=swoole.so" > /usr/local/etc/php/conf.d/swoole.ini
 
 # PHP config
 ADD php.ini    /usr/local/etc/php/php.ini

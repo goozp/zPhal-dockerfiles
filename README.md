@@ -39,7 +39,8 @@ cd zPhal
 wget https://getcomposer.org/composer.phar -O php/composer.phar  
 wget https://pecl.php.net/get/redis-3.1.3.tgz -O php/redis.tgz  
 wget https://codeload.github.com/phalcon/cphalcon/tar.gz/v3.2.2 -O php/cphalcon.tar.gz 
-wget https://pecl.php.net/get/memcached-3.0.3   .tgz -O php/memcached.tgz
+wget https://pecl.php.net/get/memcached-3.0.3.tgz -O php/memcached.tgz
+wget https://github.com/swoole/swoole-src/archive/v2.0.8.tar.gz -O php/swoole.tar.gz
 ```
 ### 4.docker-compose构建项目
 命令：
