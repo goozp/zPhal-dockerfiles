@@ -28,7 +28,7 @@ sudo pip install -U docker-compose
 ```
 ### 2.下载zPhal-dockerfiles
 ```
-git clome git@github.com:ZpGuo/zPhal-dockerfiles.git
+git clone git@github.com:ZpGuo/zPhal-dockerfiles.git
  
 mv zPhal-dockerfiles zPhal
 ```
