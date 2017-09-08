@@ -13,7 +13,6 @@ dockerfiles that support zPhal's working environment
 - Redis 3.2
 
 用到的PHP 拓展(2017.8.17更新)：
-- composer
 - redis 3.1.3
 - memcached 3.0.3
 - Phalcon 3.2.2
@@ -34,13 +33,11 @@ mv zPhal-dockerfiles zPhal
 ```
 ### 3.下载需要的拓展包
 ```
-cd zPhal
- 
-wget https://getcomposer.org/composer.phar -O php/composer.phar  
+cd zPhal/dockerdir
+  
 wget https://pecl.php.net/get/redis-3.1.3.tgz -O php/redis.tgz  
 wget https://codeload.github.com/phalcon/cphalcon/tar.gz/v3.2.2 -O php/cphalcon.tar.gz 
 wget https://pecl.php.net/get/memcached-3.0.3.tgz -O php/memcached.tgz
-wget https://github.com/swoole/swoole-src/archive/v2.0.8.tar.gz -O php/swoole.tar.gz
 ```
 ### 4.docker-compose构建项目
 命令：
@@ -58,5 +55,8 @@ docker-compose up -d
 docker-compose down
 ```
 
-## 待完善
-深度整合 zPhal 项目
+### 4.docker-tools 工具
+目前有composer
+```
+docker-compose -f docker-tools.yml  up -d
+``` 
