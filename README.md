@@ -49,13 +49,13 @@ docker-compose up
 docker-compose up -d
 ``` 
 使用docker-compose基本上就这么简单，Docker就跑起来了，用stop，start关闭开启容器服务。  
-更多的是在于编写dockerfile和docker-compose.uyml文件。  
+更多的是在于编写dockerfile和docker-compose.yml文件。  
 可以这样关闭容器并删除服务：
 ```
 docker-compose down
 ```
 
-### 4.docker-tools 工具
+### 5.docker-tools 工具
 目前有composer
 ```
 docker-compose -f docker-tools.yml  up -d
