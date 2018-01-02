@@ -18,6 +18,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ../logs/php-fpm:/var/log/php-fpm:rw
     restart: always
+    command: php-fpm
 
   nginx:
     image: nginx:1.12
@@ -54,11 +55,11 @@ services:
       restart: always
       command: "--character-set-server=utf8"
 
-  memcache-db:
-      build: ./memcache
-      ports:
-        - "11211:11211"
-      restart: always
+  # memcache-db:
+  #     build: ./memcache
+  #     ports:
+  #       - "11211:11211"
+  #     restart: always
 
   redis-db:
       build: ./redis

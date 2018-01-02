@@ -23,3 +23,4 @@ max_connections = 1024
 back_log = 128
 wait_timeout = 100
 interactive_timeout = 200
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
