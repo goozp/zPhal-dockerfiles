@@ -6,7 +6,7 @@ services:
       - "9000:9000"
     links:
       - mysql-db:mysql-db
-      - memcache-db:memcache-db
+      # - memcache-db:memcache-db
       - redis-db:redis-db
     environment:
       TP_APP_DEBUG: 1
