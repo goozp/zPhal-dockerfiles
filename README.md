@@ -6,7 +6,7 @@ dockerfiles that support zPhal's working environment
 可以一条条命令执行docker命令来构建镜像，容器。这里推荐使用docker-compose来管理，执行项目，下面是使用流程。
 
 相关软件版本：
-- PHP 7.1
+- PHP 7.2
 - MySQL 5.7
 - Nginx 1.12
 - Memcached 1.5
@@ -15,7 +15,7 @@ dockerfiles that support zPhal's working environment
 用到的PHP 拓展(2017.11.28更新)：
 - redis 3.1.4
 - memcached 3.0.4
-- Phalcon 3.2.4
+- Phalcon 3.3.0
 
 ## 使用
 ### 1.安装Docker，Docker-compose  
@@ -36,7 +36,7 @@ mv zPhal-dockerfiles zPhal
 cd zPhal/dockerdir
   
 wget https://pecl.php.net/get/redis-3.1.4.tgz -O php/redis.tgz  
-wget https://codeload.github.com/phalcon/cphalcon/tar.gz/v3.2.4 -O php/cphalcon.tar.gz 
+wget https://codeload.github.com/phalcon/cphalcon/tar.gz/v3.3.0 -O php/cphalcon.tar.gz 
 wget https://pecl.php.net/get/memcached-3.0.4.tgz -O php/memcached.tgz
 ```
 ### 4.docker-compose构建项目
