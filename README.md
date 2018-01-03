@@ -9,12 +9,10 @@ dockerfiles that support zPhal's working environment
 - PHP 7.2
 - MySQL 5.7
 - Nginx 1.12
-- Memcached 1.5
 - Redis 3.2
 
 用到的PHP 拓展(2017.11.28更新)：
 - redis 3.1.4
-- memcached 3.0.4
 - Phalcon 3.3.0
 
 ## 使用
@@ -37,7 +35,6 @@ cd zPhal/dockerdir
   
 wget https://pecl.php.net/get/redis-3.1.4.tgz -O php/redis.tgz  
 wget https://codeload.github.com/phalcon/cphalcon/tar.gz/v3.3.0 -O php/cphalcon.tar.gz 
-wget https://pecl.php.net/get/memcached-3.0.4.tgz -O php/memcached.tgz
 ```
 ### 4.docker-compose构建项目
 命令：
