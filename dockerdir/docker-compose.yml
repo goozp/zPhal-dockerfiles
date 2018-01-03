@@ -6,7 +6,6 @@ services:
       - "9000:9000"
     links:
       - mysql-db:mysql-db
-      # - memcache-db:memcache-db
       - redis-db:redis-db
     environment:
       TP_APP_DEBUG: 1
@@ -55,12 +54,6 @@ services:
         MYSQL_PASSWORD: zphal123
       restart: always
       command: "--character-set-server=utf8"
-
-  # memcache-db:
-  #     build: ./memcache
-  #     ports:
-  #       - "11211:11211"
-  #     restart: always
 
   redis-db:
       build: ./redis

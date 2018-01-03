@@ -6,7 +6,7 @@ dockerfiles that support zPhal's working environment
 可以一条条命令执行docker命令来构建镜像，容器。这里推荐使用docker-compose来管理，执行项目，下面是使用流程。
 
 相关软件版本：
-- PHP 7.2
+- PHP 7.1
 - MySQL 5.7
 - Nginx 1.12
 - Redis 3.2
