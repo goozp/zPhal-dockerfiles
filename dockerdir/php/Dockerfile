@@ -2,9 +2,9 @@ FROM php:7.1-fpm
 MAINTAINER goozp "gzp@goozp.com"
 
 # Install env
-ADD sources.list    /etc/apt/sources.list
 RUN apt-get update && apt-get install -y \
         git \
+        wget \
         libmemcached-dev \
         libmcrypt-dev \
         libfreetype6-dev \
@@ -13,8 +13,8 @@ RUN apt-get update && apt-get install -y \
         && rm -r /var/lib/apt/lists/*
 
 # Install PHP extensions
-COPY redis.tgz /home/redis.tgz
-COPY cphalcon.tar.gz /home/cphalcon.tar.gz
+COPY ./pkg/redis.tgz /home/redis.tgz
+COPY ./pkg/cphalcon.tar.gz /home/cphalcon.tar.gz
 
 RUN docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
         && docker-php-ext-install zip \
@@ -31,6 +31,8 @@ RUN cd /home \
     && ./install \
     && echo "extension=phalcon.so" > /usr/local/etc/php/conf.d/phalcon.ini
 
+RUN rm -f /home/redis.tgz \
+        rm -f /home/cphalcon.tar.gz 
 
 WORKDIR /data
 

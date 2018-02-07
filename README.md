@@ -32,9 +32,9 @@ mv zPhal-dockerfiles zPhal
 ### 3.下载需要的拓展包
 ```
 cd zPhal/dockerdir
-  
-wget https://pecl.php.net/get/redis-3.1.4.tgz -O php/redis.tgz  
-wget https://codeload.github.com/phalcon/cphalcon/tar.gz/v3.3.0 -O php/cphalcon.tar.gz 
+
+wget https://pecl.php.net/get/redis-3.1.4.tgz -O php/pkg/redis.tgz  
+wget https://codeload.github.com/phalcon/cphalcon/tar.gz/v3.3.1 -O php/pkg/cphalcon.tar.gz 
 ```
 ### 4.docker-compose构建项目
 命令：
