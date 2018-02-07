@@ -1,5 +1,5 @@
 FROM php:7.1-fpm
-MAINTAINER Godtoy <zhaojunlike@gmail.com>
+MAINTAINER goozp "gzp@goozp.com"
 
 #如果没开启bcmath会导致composer安装某些包安装不上
 RUN sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list \

@@ -1,10 +1,14 @@
 FROM php:7.1-fpm
 MAINTAINER goozp "gzp@goozp.com"
 
+# set timezome
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # Install env
+ADD sources.list /etc/apt/sources.list
 RUN apt-get update && apt-get install -y \
         git \
-        wget \
         libmemcached-dev \
         libmcrypt-dev \
         libfreetype6-dev \
