@@ -1,10 +1,8 @@
-version: '3.0'
-service:
+version: '3.3'
+services:
   composer:
-    build: composer/
+    image: composer:latest
     volumes:
-      #网站目录
       - ../app:/app:rw
-    working_dir: /app/
-    command: composer install
-
+    working_dir: /app/zPhal
+    command: composer update

@@ -6,7 +6,7 @@ dockerfiles that support zPhal's working environment
 可以一条条命令执行docker命令来构建镜像，容器。这里推荐使用docker-compose来管理，执行项目，下面是使用流程。
 
 相关软件版本：
-- PHP 7.1
+- PHP 7.2
 - MySQL 5.7
 - Nginx 1.12
 - Redis 3.2
@@ -45,7 +45,8 @@ docker-compose up
 docker-compose up -d
 ``` 
 使用docker-compose基本上就这么简单，Docker就跑起来了，用stop，start关闭开启容器服务。  
-更多的是在于编写dockerfile和docker-compose.yml文件。  
+更多的是在于编写dockerfile和docker-compose.yml文件。 
+
 可以这样关闭容器并删除服务：
 ```
 docker-compose down
@@ -54,5 +55,5 @@ docker-compose down
 ### 5.docker-tools 工具
 目前有composer
 ```
-docker-compose -f docker-tools.yml  up -d
+docker-compose -f docker-tools.yml up -d
 ``` 
