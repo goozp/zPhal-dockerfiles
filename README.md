@@ -13,7 +13,7 @@ dockerfiles that support zPhal's working environment
 
 用到的PHP 拓展(2017.11.28更新)：
 - redis 3.1.4
-- Phalcon 3.3.0
+- Phalcon 3.3.1
 
 ## 使用
 ### 1.安装Docker，Docker-compose  
@@ -26,12 +26,11 @@ sudo pip install -U docker-compose
 ### 2.下载zPhal-dockerfiles
 ```
 git clone git@github.com:ZpGuo/zPhal-dockerfiles.git
- 
-mv zPhal-dockerfiles zPhal
 ```
+
 ### 3.下载需要的拓展包
 ```
-cd zPhal/dockerdir
+cd zPhal-dockerfiles/files
 
 wget https://pecl.php.net/get/redis-3.1.6.tgz -O php/pkg/redis.tgz  
 wget https://codeload.github.com/phalcon/cphalcon/tar.gz/v3.3.1 -O php/pkg/cphalcon.tar.gz 
