@@ -52,8 +52,20 @@ docker-compose up -d
 docker-compose down
 ```
 
-### 5.docker-tools 工具
-目前有composer
+### 5. 使用Composer
+zPhal 项目依赖 Composer 进行构建。
+
+我们在创建PHP-fpm容器时就已经将 Composer 安装在容器中，可以运行该容器进行Composer操作。
+
+用 docker-compose 进行操作：
 ```
-docker-compose -f docker-tools.yml up -d
-``` 
+docker-compose run --rm -w /data/www/zPhal php-fpm composer update
+```
+`-w /data/www/zPhal`为在php-fpm的工作区域，zPhal项目也是挂载在里面，所有我们可以直接在容器里运行composer。
+
+或者进入宿主机app目录下用docker命令：
+```
+cd zPhal-dockerfiles/app
+
+docker run -it --rm -v `pwd`:/data/www/ -w /data/www/zPhal files_php-fpm composer update
+```
