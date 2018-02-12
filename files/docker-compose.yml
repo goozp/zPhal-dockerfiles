@@ -9,7 +9,7 @@ services:
       - redis-db:redis-db
     volumes:
       - ../app:/data/www:rw
-      - ./php/php-dev.ini:/usr/local/etc/php/php.ini:ro
+      - ./php/php.ini:/usr/local/etc/php/php.ini:ro # 当前php配置文件；可以拷贝修改php-dev.ini为想要的配置
       - ./php/php-fpm.conf:/usr/local/etc/php-fpm.conf:ro
       - ../logs/php-fpm:/var/log/php-fpm:rw
     restart: always
