@@ -1,5 +1,7 @@
 # zPhal-dockerfiles
-dockerfiles that support zPhal's working environment
+dockerfiles that support zPhal's working environment   
+
+本分支用于测试纯脚本构建。
 
 ## 简介
 用 Docker 容器服务的方式搭建 zPhal 环境，易于维护、升级。使用前需了解 Docker 的基本概念，常用基本命令。
