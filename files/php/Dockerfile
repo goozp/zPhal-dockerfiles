@@ -1,5 +1,6 @@
 FROM php:7.2-fpm
-MAINTAINER goozp "gzp@goozp.com"
+LABEL maintainer="gzp@goozp.com"
+
 
 # set timezome
 ENV TZ=Asia/Shanghai
